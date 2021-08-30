@@ -1,119 +1,123 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="styles.css">
 		<script type="module" src="script.js"></script>
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Arapey&family=Karma&family=Lato&family=Montserrat&family=Raleway&display=swap" rel="stylesheet">
-		<link rel="icon" href="Diarywise_favicon.png" type="image/x-icon" sizes="32x32"/>
-		<script>
-			// Get the modal
-			var modal = document.getElementById('id01');
+		<link rel="icon" href="Diarywise_favicon.png" type="image/x-icon" sizes="32x32" />
 
-			// When the user clicks anywhere outside of the modal, close it
-			window.onclick = function (event) {
-				if (event.target == modal) {
-					modal.style.display = "none";
-				}
-			}
-
-			// Get the modal
-			var modal = document.getElementById('id02');
-
-			// When the user clicks anywhere outside of the modal, close it
-			window.onclick = function (event) {
-				if (event.target == modal) {
-					modal.style.display = "none";
-				}
-			}
-		</script>
+		<!--Bootstrap Links-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 	</head>
 
-	<body onload='loadTheme()'>
+	<body>
 
-		<div class="header">
-			<br>
-			<img src="Diarywise_Logo.png" alt="Website Logo" class="logo">
-			<ul id="co">
-				<li id="uno">
-					<a href="#goal" class="goal" id="link"> Our Goal </a>
-				</li>
-				<li id="dos">
-					<a href="#features" class="features" id="link"> Features </a>
-				</li>
-				<li id="tres">
-					<a href="#about" class="about" id="link"> About Us </a>
-				</li>
-				<li id="cuatro">
-					<a href="settings.html" class="settings" id="link"> Settings </a>
-				</li>
-			</ul>
+		<div class="nav-box">
+			<!--Navigation Bar-->
+			<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+				<a class="navbar-brand" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/index">
+					<img src="Diarywise_Logo.png" width="30" height="30" class="d-inline-block align-top logo-diarywise" alt="Diarywise Logo">
+					Diarywise
+				</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/index">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/calender_Test">Calender</a>
+						<a class="nav-link" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/settings">Settings</a>
+					</div>
+				</div>
+
+				<!--Form-->
+				<form type="post" action="signup.html">
+					<input class="btn btn-outline-accent my-2 my-sm-0 btn-outline-danger" type="submit" value="Sign Up" role="button">
+
+					<!--Logout-->
+					<a href='/~/DiaryCreatorGroupProject/logout' class="btn btn-outline-success">Log Out</a>
+				</form>
+			</nav>
 		</div>
 
-		<div id="heading">
+		<div class="box-1">
 			<br>
-			<h1> Welcome to Diarywise </h1>
-			<p id="pTag">
-				In Diarywise we try to connect with our people and make
-				them feel happy and satisfied using our website. Our website
-				is designed to provide a resource to anyone who wants to
-				write a Diary entry before going to bed. They can login to
-				their account and quickly write their entry and even
-				customize it!!
+			<!--The header in the top-->
+			<h1> Diarywise. </h1>
+			<p class="pTag">
+				In Diarywise we try to connect with our people and make them feel happy and satisfied using our website. Our website is designed to provide a resource to anyone who wants to write a Diary entry before going to bed. Diarywise is a place where anyone can put their thoughts, feelings, events that happened in their life into a diary entry.
 			</p>
+		</div>
+
+		<div class="box-2">
+			<br>
+			<h1> Our Mission </h1>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 align-self-center">
+						<p>
+							Our Mission is to make every user feel good by writing down all their thoughts and things in their diary entry. We built this website because there are not many websites that are good for writing a diary entry. But here we want everyone to feel safe to write down their thoughts and how they feel every day and take the burden off their mind. There are many cool features and the users can also customize the website by using a theme. Diarywise is where users can write their thoughts, feelings, opinions, and things they did during the day and sleep well!!
+						</p>
+					</div>
+					<div class="col-md-6 align-self-center">
+						<img src="mission.jpg" alt="" class="img-mission">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="box-3">
+			<br>
+			<h1> Our Features </h1>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6  align-self-center">
+						<p>
+							There are so many amazing features on our website. Anyone can create an account and can start writing their diary entry every day. It is free to use and you can also customize the things that you are writing. You can make the text size bigger, smaller, use a different font or you could even change the color of the font. To start writing the entries you need you first go to the calendar page and then click on the date that you want to write on and they start writing it. Our website is a cool place if you want are looking for a website where you want you to write a diary in, you might not be the best but it still has all the features you want for it to be a good place to write a diary entry.
+						</p>
+					</div>
+					<div class="col-md-6  align-self-center">
+						<img src="features.jpg" alt="" class="img-features">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<br>
+			<h1> Diarywise. </h1>
+			<br>
+			<p class="description-footer">
+				Diarywise is a safe place to write a diary entry.
+			</p>
+			<br>
+			<center>
+				<a class="btn btn-light" href="contact.html">Contact</a>
+			</center>
 			<br>
 			<br>
 			<center>
-				<a href='/~/Diary Creator Group Project/signup'><button onclick="document.getElementById('id02').style.display='block'" class="btn2" style="width:150px;" id="signin">Sign Up</button></a>
-				<a href='/~/Diary Creato
-			r Group Project/loginpage'><button onclick="document.getElementById('id01').style.display='block'" class="btn1" style="width:150px;" id="login">Login</button></a>
+				<div class="icons">
+					<a href="https://www.linkedin.com/in/lakshmi-pachipulusu-22001620b/" class = "link-footer">
+						<img src="Images/linkedln_logo.png" alt="lakshmi's linkedln profile" class="linkedln">
+					</a>
+					<a href="https://github.com/CodingLakshmi" class = "link-footer">
+						<img src="Images/github_icon_img.jpg" alt="lakshmi's github profile" class="github">
+					</a>
+					<a href="https://devpost.com/Fantasy35" class = "link-footer">
+						<img src="Images/Devpost_icon_img.png" alt="lakshmi's devpost portfolio" class="devpost">
+					</a>
+				</div>
 			</center>
-		</div>
-
-		<div class="Info">
-			<br>
-			<h3 id="goal"> Our Goal </h3>
-			<p>
-				Our goal is to make every user feel good and have a
-				satisfaction that they wrote their diary entry today. The
-				reason why I built this website is because in my experience I
-				have searched so many websites to write my diary, but in most
-				sinerios I never found the perfect website that matched my
-				expectations of how a Diary writing website should be.
-				That is why I created Diarywise, where you can find the
-				perfect user interface and many cool features to
-				customize your diary entry. I hope you have a lot of Fun
-				while writing your Diary Entries.
-			</p>
-			<h3 id="features"> Features </h3>
-			<p>
-				There are so many amazing features in our website. Anyone can create an account can start writing their diary entry  
-				every day. It is free to use and you can also customize the things that you are writing. You can make the text size 
-				bigger, smaller, use a differnt font or you could even change the color of the font. To start writing the entries you 
-				need you first go to the calender page and then click on the date that you want to write on and they start writing it
-				Our website is a cool place if you want are looking for a website where you want you write a diary in, it might not be
-				the best but it still has all the features you want for it to be a good place to write a diary entry. 
-			</p>
-		</div>
-
-		<div id="foot">
-			<center>
-				<section id="contact">
-					<h2>Contact</h2>
-					<form action='/survey/checkout' method='post' enctype="multipart/form-data">
-						<input type="text" name="Name" placeholder='Your name' required>
-						<input type="email" name="email" placeholder='Your email' required>
-						<textarea placeholder='Write a message here' required></textarea>
-						<button>Send Message</button>
-						<input type='hidden' name='redirecturl' value='thankyou.html'>
-						<input type='hidden' name='survey' value='Contact'>
-					</form>
-				</section>
-			</center>
-			<p id="pTag2">Copyright © 2021 Diarywise Team </p>
-		</div>
+		</footer>
 
 	</body>
 

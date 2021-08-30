@@ -1,4 +1,4 @@
-## Dairywise
+## Dairywise - Continuation
 -----------------------------------------------------------------
 ## Project Owner
 - Lakshmi Pachipulusu
@@ -13,11 +13,11 @@ This project is space for people who want to write a diary. They can create an a
 Not many Diary apps are very good. So, to satisfy the user's needs I would like to create this website to be the best so that the user is going to have the best experience when using it. 
 
 ## Features 
-- Sign up/login page
-- A calender at the begenning to click on the that the user wants to write the diary. 
-- you write your entry and customize the page using different fonts, uploding videos, images, etc. 
-- Then they save it.
-- You can go back to write another entry tomorrow. 
+- Sign Up/ Login Page
+- Calender Page to open a diary entry
+- In a diary entry the user can change the Font's, font's color and fon't sizes
+- They can add insert an image and submit the form
+- They can change the theme of the website in their account. 
 
 ## User Flow
 - They click on the login with google or create an account. 
@@ -26,4 +26,18 @@ Not many Diary apps are very good. So, to satisfy the user's needs I would like 
 - After writing they can customize their diary and make it look beautiful by adding emojies, images, or videos. 
 - Then they can save their page and it automatically takes them to the home page. 
 
+
+## Future Work
+1. Inject the id into the textarea so that we can update the database.
+2. Update the database with Calender update
+3. We should delete/clean up multiple date entries. 
+4. If there is already a diary entry then you need to fetch that intry to show. 
+5. Adding Pictures to the form.
+6. Making the Design more better. Adding more features to the form.
+
 ## Wire Frames
+<a href = "https://docs.google.com/document/d/1rhgkdZW3Q9Xt_4x8gIV0nGn1ORYIgSk2OKzmvzaVKdk/edit?usp=sharing"> Features I am Improving </a>
+</br>
+<a href = "https://www.figma.com/file/0RVvUI8vaORjcEWslGTRbS/Untitled?node-id=0%3A1"> Figma Design Link </a>
+</br>
+<a href = "https://www.canva.com/design/DAEkMR1Z_6o/WAUn6sqV2XF7eeThq0mcaA/view?utm_content=DAEkMR1Z_6o&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"> Canva Overveiw of new features </a>

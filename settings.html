@@ -2,222 +2,651 @@
 <html>
 
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="styles.css">
 		<script type="module" src="script.js"></script>
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Arapey&family=Karma&family=Lato&family=Montserrat&family=Raleway&display=swap" rel="stylesheet">
 		<link rel="icon" href="Diarywise_favicon.png" type="image/x-icon" sizes="32x32" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 		<style>
+			.color-theme {
+				width: 700px;
+			}
 
+			.season-theme {
+				width: 700px;
+			}
+
+			.style-font {
+				font-size: 18px;
+			}
 		</style>
 		<script>
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
 
+			for (i = 0; i < coll.length; i++) {
+				coll[i].addEventListener("click", function () {
+					this.classList.toggle("active");
+					var content = this.nextElementSibling;
+					if (content.style.maxHeight) {
+						content.style.maxHeight = null;
+					} else {
+						content.style.maxHeight = content.scrollHeight + "px";
+					}
+				});
+			}
 		</script>
 	</head>
 
-	<body onload='loadTheme()'>
-		<div class="header">
-			<br>
-			<a href="index.html">
-				<img src="Diarywise_Logo.png" alt="Website Logo" class="logo">
-			</a>
-			<center>
-				<h2 class="title"> Settings </h2>
-			</center>
-			<ul id="co">
-				<li id="cinco">
-					<a href="https://www.enviremadstar.com/~/Diary%20Creator%20Group%20Project/settings" class="settings" id="link"> Settings </a>
-				</li>
-				<li id = "seis">
-					<a onclick='logout()' id = "link">Log Out</a>
-				</li>
-			</ul>
-		</div>
-		<div style="height: auto;">
-			<br>
-			<h1> Themes For the Website </h1>
-			<div class="body">
-				<button type="button" class="collapsible autumn">Open Autumn Themed Options</button>
-				<div class="content autumn-content">
-					<h2 class="themeHeading"> Autumn Theme </h2>
-					<!--Something about the theme. Some lines telling how it.-->
-					<p>
+	<body onload=loadTheme()>
 
-					</p>
-					<!--Autumn Colored Background Color-->
-					<center>
-						<button onclick="autumnFunction()" class="btn-pretty">Toggle autumn mode</button>
-					</center>
-					<!--Autum Colored Bakground Image-->
-					<center>
-						<button onclick="autumnFunctionBackground()" class="btn-pretty">Toggle Autumn background Image</button>
-					</center>
-					<br>
-					<br>
-					<br>
+		<div class="nav-box">
+			<!--Navigation Bar-->
+			<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+				<a class="navbar-brand" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/index">
+					<img src="Diarywise_Logo.png" width="30" height="30" class="d-inline-block align-top logo-diarywise" alt="Diarywise Logo">
+					Diarywise
+				</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/index">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/calender_Test">Calender</a>
+						<a class="nav-link" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/settings">Settings</a>
+					</div>
 				</div>
 
-				<button type="button" class="collapsible black">Open Dark themed options</button>
-				<div class="content black-content">
-					<h2> Dark Theme </h2>
-					<!--Something about the theme. Some lines telling how it.-->
-					<p>
+				<!--Form-->
+				<form type="post" action="signup.html">
+					<input class="btn btn-outline-accent my-2 my-sm-0 btn-outline-danger" type="submit" value="Sign Up" role="button">
 
-					</p>
-					<!--Dark Colored Background Color-->
-					<center>
-						<button onclick="blackFunction()" class="btn-pretty">Toggle dark mode</button>
-					</center>
-					<!--Dark Colored Bakground Image-->
-					<center>
-						<button onclick="blackFunctionbackground()" class="btn-pretty">Toggle dark background Image</button>
-					</center>
-					<br>
-					<br>
-					<br>
-				</div>
-
-				<button type="button" class="collapsible pink">Open Pink themed Options</button>
-				<div class="content pink-content">
-					<h2 class="themeHeading"> Pink Theme </h2>
-					<!--Something about the theme. Some lines telling how it.-->
-					<p>
-
-					</p>
-					<!--Pink Colored Background Color-->
-					<center>
-						<button onclick="pinkFunction()" class="btn-pretty">Toggle pink mode</button>
-					</center>
-					<!--Pink Colored Bakground Image-->
-					<center>
-						<button onclick="pinkFunctionbackground()" class="btn-pretty">Toggle pink background Image</button>
-					</center>
-					<br>
-					<br>
-					<br>
-				</div>
-
-				<button type="button" class="collapsible purple">Open Purple themed Options</button>
-				<div class="content purple-content">
-					<h2 class="themeHeading"> Purple Theme </h2>
-					<!--Something about the theme. Some lines telling how it.-->
-					<p>
-
-					</p>
-					<!--Purple Colored Background Color-->
-					<center>
-						<button onclick="purpleFunction()" class="btn-pretty">Toggle purple mode</button>
-					</center>
-					<!--Purple Colored Bakground Image-->
-					<center>
-						<button onclick="purpleFunctionBackground()" class="btn-pretty">Toggle purple background Image</button>
-					</center>
-					<br>
-					<br>
-					<br>
-				</div>
-
-				<button type="button" class="collapsible warm">Open Warm themed Options</button>
-				<div class="content warm-content">
-					<h2 class="themeHeading"> Warm Theme </h2>
-					<!--Something about the theme. Some lines telling how it.-->
-					<p>
-
-					</p>
-					<!--Warm Colored Background Color-->
-					<center>
-						<button onclick="warmFunction()" class="btn-pretty">Toggle warm mode</button>
-					</center>
-					<!--Warm Colored Bakground Image-->
-					<center>
-						<button onclick="warmFunctionBackground()" class="btn-pretty">Toggle warm background Image</button>
-					</center>
-					<br>
-					<br>
-					<br>
-				</div>
-
-				<button type="button" class="collapsible green">Open Green themed Options</button>
-				<div class="content green-content">
-					<h2 class="themeHeading"> Green Theme </h2>
-					<!--Something about the theme. Some lines telling how it.-->
-					<p>
-
-					</p>
-					<!--Green Colored Background Color-->
-					<center>
-						<button onclick="greenFunction()" class="btn-pretty">Toggle Green mode</button>
-					</center>
-					<!--Green Colored Bakground Image-->
-					<center>
-						<button onclick="greenFunctionBackground()" class="btn-pretty">Toggle Green background Image</button>
-					</center>
-					<br>
-					<br>
-					<br>
-				</div>
-
-				<button type="button" class="collapsible blue">Open Blue themed Options</button>
-				<div class="content blue-content">
-					<h2 class="themeHeading"> Blue Theme </h2>
-					<!--Something about the theme. Some lines telling how it.-->
-					<p>
-
-					</p>
-					<!--Blue Colored Background Color-->
-					<center>
-						<button onclick="blueFunction()" class="btn-pretty">Toggle Blue mode</button>
-					</center>
-					<!--Blue Colored Bakground Image-->
-					<center>
-						<button onclick="blueFunctionBackground()" class="btn-pretty">Toggle Blue background Image</button>
-					</center>
-					<br>
-					<br>
-					<br>
-				</div>
-				<br>
-				<br>
-				<br>
-			</div>
+					<!--Logout-->
+					<a href='/~/DiaryCreatorGroupProject/logout' class="btn btn-outline-success">Log Out</a>
+				</form>
+			</nav>
 		</div>
 
-		<div class="Personal">
-			<h2> About Me </h2>
-			<h2>
-				Your username is: {{username}}
-			</h2>
-		</div>
+		<br>
+		<br>
 
 		<div>
-
+			<h1> User Information </h1>
+			<h3> Username: {{username}}</h3>
 		</div>
 
-		<div class="password">
-			<div id="password-reset">
+		<br>
+		<br>
+
+		<section>
+			<div class="color-theme mx-auto">
+				<h2> Color Themes </h2>
+
+				<!-- Collapsible For the Color Themes -->
+
+				<!-- Pink Theme Collapsible -->
+				<button class="collapsible style-font pink-heading-collapsible">Pink Theme</button>
+				<div class="content pink-body-collapsible">
+					<br>
+					<h2> Write Title.. </h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+					<div class="container">
+						<div class="row justify-content-md-center">
+							<div class="col-3">
+								<button class="btn btn-danger" onclick="pinkColorTheme()">
+									Solid Color
+								</button>
+							</div>
+							<div class="col-4">
+								<button class="btn btn-danger" onclick="pinkColorBackgroundTheme()">
+									Image Background
+								</button>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+				</div>
+
+				<!-- Purple Theme Collapsible -->
+				<button class="collapsible style-font purple-heading-collapsible">Purple Theme</button>
+				<div class="content purple-body-collapsible">
+					<br>
+					<h2> Write Title.. </h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+					<div class="container">
+						<div class="row justify-content-md-center">
+							<div class="col-3">
+								<button class="btn btn-danger" onclick="purpleColorTheme()">
+									Solid Color
+								</button>
+							</div>
+							<div class="col-4">
+								<button class="btn btn-danger" onclick="purpleColorBackgroundTheme()">
+									Image Background
+								</button>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+				</div>
+
+				<!-- Blue Theme Collapsible -->
+				<button class="collapsible style-font blue-heading-collapsible">Blue Theme</button>
+				<div class="content blue-body-collapsible">
+					<br>
+					<h2> Write Title.. </h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+					<div class="container">
+						<div class="row justify-content-md-center">
+							<div class="col-3">
+								<button class="btn btn-primary" onclick="blueColorTheme()">
+									Solid Color
+								</button>
+							</div>
+							<div class="col-4">
+								<button class="btn btn-primary" onclick="blueColorBackgroundTheme()">
+									Image Background
+								</button>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+				</div>
+
+				<!-- Red Theme Collapsible -->
+				<button class="collapsible style-font red-heading-collapsible">Red Theme</button>
+				<div class="content red-body-collapsible">
+					<br>
+					<h2> Write Title.. </h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+					<div class="container">
+						<div class="row justify-content-md-center">
+							<div class="col-3">
+								<button class="btn btn-danger" onclick="redColorTheme()">
+									Solid Color
+								</button>
+							</div>
+							<div class="col-4">
+								<button class="btn btn-danger" onclick="redColorBackgroundTheme()">
+									Image Background
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<br>
+					<br>
+				</div>
+
+				<!-- Green Theme Collapsible -->
+				<button class="collapsible style-font green-heading-collapsible">Green Theme</button>
+				<div class="content green-body-collapsible">
+					<br>
+					<h2> Write Title.. </h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+					<div class="container">
+						<div class="row justify-content-md-center">
+							<div class="col-3">
+								<button class="btn btn-success" onclick="greenColorTheme()">
+									Solid Color
+								</button>
+							</div>
+							<div class="col-4">
+								<button class="btn btn-success" onclick="greenColorBackgroundTheme()">
+									Image Background
+								</button>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+				</div>
+
+				<!-- Orange Theme Collapsible -->
+				<button class="collapsible style-font orange-heading-collapsible">Orange Theme</button>
+				<div class="content orange-body-collapsible">
+					<br>
+					<h2> Write Title.. </h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+					<div class="container">
+						<div class="row justify-content-md-center">
+							<div class="col-3">
+								<button class="btn btn-warning" onclick="orangeColorTheme()">
+									Solid Color
+								</button>
+							</div>
+							<div class="col-4">
+								<button class="btn btn-warning" onclick="orangeColorBackgroundTheme()">
+									Image Background
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<br>
+					<br>
+				</div>
+
+				<!-- Yellow Theme Collapsible -->
+				<button class="collapsible style-font yellow-heading-collapsible">Yellow Theme</button>
+				<div class="content yellow-body-collapsible">
+					<br>
+					<h2> Write Title.. </h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis ostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+					<div class="container">
+						<div class="row justify-content-md-center">
+							<div class="col-3">
+								<button class="btn btn-warning" onclick="yellowColorTheme()">
+									Solid Color
+								</button>
+							</div>
+							<div class="col-4">
+								<button class="btn btn-warning" onclick="yellowColorBackgroundTheme()">
+									Image Background
+								</button>
+							</div>
+						</div>
+					</div>
+
+					<br>
+					<br>
+				</div>
+
+				<!-- Brown Theme Collapsible -->
+				<button class="collapsible style-font brown-heading-collapsible">Brown Theme</button>
+				<div class="content brown-body-collapsible">
+					<br>
+					<h2> Write Title.. </h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+					<div class="container">
+						<div class="row justify-content-md-center">
+							<div class="col-3">
+								<button class="btn btn-secondary" onclick="brownColorTheme()">
+									Solid Color
+								</button>
+							</div>
+							<div class="col-4">
+								<button class="btn btn-secondary" onclick="brownColorBackgroundTheme()">
+									Image Background
+								</button>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+				</div>
+
+				<!-- Black Theme Collapsible -->
+				<button class="collapsible style-font black-heading-collapsible">Black Theme</button>
+				<div class="content black-body-collapsible">
+					<br>
+					<h2> Write Title.. </h2>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+						magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat.
+					</p>
+					<div class="container">
+						<div class="row justify-content-md-center">
+							<div class="col-3">
+								<button class="btn btn-dark" onclick="blackColorTheme()">
+									Solid Color
+								</button>
+							</div>
+							<div class="col-4">
+								<button class="btn btn-dark" onclick="blackColorBackgroundTheme()">
+									Image Background
+								</button>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+				</div>
+			</div>
+		</section>
+
+		<br>
+		<br>
+
+		<div class="season-theme mx-auto">
+			<h2> Seasonal Themes </h2>
+			<!-- Themes Collapsible -->
+
+			<!-- Winter Theme Collapsible -->
+			<button class="collapsible style-font Winter-heading-collapsible">Winter Theme</button>
+			<div class="content Winter-body-collapsible">
 				<br>
-				<h2> Password Reset </h2>
+				<h2> Write Title.. </h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<div class="container">
+					<div class="row justify-content-md-center">
+						<div class="col-3">
+							<button class="btn btn-danger" onclick="winterColorTheme()">
+								Solid Color
+							</button>
+						</div>
+						<div class="col-4">
+							<button class="btn btn-danger" onclick="winterColorBackgroundTheme()">
+								Image Background
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+			</div>
+
+			<!--Autumn Theme Collapsible-->
+			<button class="collapsible style-font Autumn-heading-collapsible">Autumn Theme</button>
+			<div class="content Autumn-body-collapsible">
+				<br>
+				<h2> Write Title.. </h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<div class="container">
+					<div class="row justify-content-md-center">
+						<div class="col-3">
+							<button class="btn btn-danger" onclick="autumnColorTheme()">
+								Solid Color
+							</button>
+						</div>
+						<div class="col-4">
+							<button class="btn btn-danger" onclick="autumnColorBackgroundTheme()">
+								Image Background
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+			</div>
+
+			<!--Rainbow Theme Collapsible-->
+			<button class="collapsible style-font Rainbow-heading-collapsible">Rainbow Theme</button>
+			<div class="content Rainbow-body-collapsible">
+				<br>
+				<h2> Write Title.. </h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<div class="container">
+					<div class="row justify-content-md-center">
+						<div class="col-3">
+							<button class="btn btn-danger" onclick="rainbowColorTheme()">
+								Solid Color
+							</button>
+						</div>
+						<div class="col-4">
+							<button class="btn btn-danger" onclick="rainbowColorBackgroundTheme()">
+								Image Background
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+			</div>
+
+			<!--Nature Theme Collapsible-->
+			<button class="collapsible style-font Nature-heading-collapsible">Nature Theme</button>
+			<div class="content Nature-body-collapsible">
+				<br>
+				<h2> Write Title.. </h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<div class="container">
+					<div class="row justify-content-md-center">
+						<div class="col-3">
+							<button class="btn btn-danger" onclick="natureColorTheme()">
+								Solid Color
+							</button>
+						</div>
+						<div class="col-4">
+							<button class="btn btn-danger" onclick="natureColorBackgroundTheme()">
+								Image Background
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+			</div>
+
+			<!--Spring Theme Collapsible-->
+			<button class="collapsible style-font Spring-heading-collapsible">Spring Theme</button>
+			<div class="content Spring-body-collapsible">
+				<br>
+				<h2> Write Title.. </h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<div class="container">
+					<div class="row justify-content-md-center">
+						<div class="col-3">
+							<button class="btn btn-danger" onclick="springColorTheme()">
+								Solid Color
+							</button>
+						</div>
+						<div class="col-4">
+							<button class="btn btn-danger" onclick="springColorBackgroundTheme()">
+								Image Background
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+			</div>
+
+			<!--Night Theme Collapsible-->
+			<button class="collapsible style-font Night-heading-collapsible">Night Theme</button>
+			<div class="content Night-body-collapsible">
+				<br>
+				<h2> Write Title.. </h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<div class="container">
+					<div class="row justify-content-md-center">
+						<div class="col-3">
+							<button class="btn btn-danger" onclick="nightColorTheme()">
+								Solid Color
+							</button>
+						</div>
+						<div class="col-4">
+							<button class="btn btn-danger" onclick="nightColorBackgroundTheme()">
+								Image Background
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+			</div>
+
+			<!--Earth Theme Collapsible-->
+			<button class="collapsible style-font Earth-heading-collapsible">Earth Theme</button>
+			<div class="content Earth-body-collapsible">
+				<br>
+				<h2> Write Title.. </h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<div class="container">
+					<div class="row justify-content-md-center">
+						<div class="col-3">
+							<button class="btn btn-success" onclick="earthColorTheme()">
+								Solid Color
+							</button>
+						</div>
+						<div class="col-4">
+							<button class="btn btn-success" onclick="earthColorBackgroundTheme()">
+								Image Background
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+			</div>
+
+			<!--Space Theme Collapsible-->
+			<button class="collapsible style-font Space-heading-collapsible">Space Theme</button>
+			<div class="content Space-body-collapsible">
+				<br>
+				<h2> Write Title.. </h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<div class="container">
+					<div class="row justify-content-md-center">
+						<div class="col-3">
+							<button class="btn btn-danger" onclick="spaceColorTheme()">
+								Solid Color
+							</button>
+						</div>
+						<div class="col-4">
+							<button class="btn btn-danger" onclick="spaceColorBackgroundTheme()">
+								Image Background
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
+			</div>
+
+			<!--Retro Theme Collapsible-->
+			<button class="collapsible style-font Retro-heading-collapsible">Retro Theme</button>
+			<div class="content Retro-body-collapsible">
+				<br>
+				<h2> Write Title.. </h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+					magna aliqua. Ut enim ad minim veniam, quis nostru exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.
+				</p>
+				<div class="container">
+					<div class="row justify-content-md-center">
+						<div class="col-3">
+							<button class="btn btn-danger" onclick="retroColorTheme()">
+								Solid Color
+							</button>
+						</div>
+						<div class="col-4">
+							<button class="btn btn-danger" onclick="retroColorBackgroundTheme()">
+								Image Background
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<br>
+				<br>
 			</div>
 		</div>
-
-		<div id="foot">
+		<br>
+		<br>
+		<br>
+		
+		<footer>
+			<br>
+			<h1> Diarywise. </h1>
+			<br>
+			<p class="description-footer">
+				Diarywise is a safe place to write a diary entry.
+			</p>
+			<br>
 			<center>
-				<section id="contact">
-					<h2>Contact</h2>
-					<form action='/survey/checkout' method='post' enctype="multipart/form-data">
-						<input type="text" name="Name" placeholder='Your name' required>
-						<input type="email" name="email" placeholder='Your email' required>
-						<textarea placeholder='Write a message here' required></textarea>
-						<button>Send Message</button>
-						<input type='hidden' name='redirecturl' value='thankyou.html'>
-						<input type='hidden' name='survey' value='Contact'>
-					</form>
-				</section>
+				<a class="btn btn-light" href="contact.html">Contact</a>
 			</center>
-			<p id="pTag2">Copyright © 2021 Diarywise Team </p>
-		</div>
-
+			<br>
+			<br>
+			<center>
+				<div class="icons">
+					<a href="https://www.linkedin.com/in/lakshmi-pachipulusu-22001620b/" class="link-footer">
+						<img src="Images/linkedln_logo.png" alt="lakshmi's linkedln profile" class="linkedln">
+					</a>
+					<a href="https://github.com/CodingLakshmi" class="link-footer">
+						<img src="Images/github_icon_img.jpg" alt="lakshmi's github profile" class="github">
+					</a>
+					<a href="https://devpost.com/Fantasy35" class="link-footer">
+						<img src="Images/Devpost_icon_img.png" alt="lakshmi's devpost portfolio" class="devpost">
+					</a>
+				</div>
+			</center>
+		</footer>
 	</body>
 
 </html>

@@ -2,35 +2,35 @@
 <html>
 
 	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta charset='utf-8' />
-		<link href='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.6.0/main.min.css' rel='stylesheet' />
-		<script src='https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@5.6.0/main.min.js'></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="stylesheet" href="styles.css">
 		<script type="module" src="script.js"></script>
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		<link href="https://fonts.googleapis.com/css2?family=Arapey&family=Karma&family=Lato&family=Montserrat&family=Raleway&display=swap" rel="stylesheet">
 		<link rel="icon" href="Diarywise_favicon.png" type="image/x-icon" sizes="32x32" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 		<style>
-			
+
 		</style>
 		<script>
 			/* Ask the server for the data by its name we gave it */
 			/* Putting the data into an array so that we can easily count the entries */
 			async function load() {
-				const resp = await fetch('/~/Diary%20Creator%20Group%20Project/account/entries?all=true')
+				const resp = await fetch('/~/DiaryCreatorGroupProject/account/entries?all=true')
 				window.json = await resp.json();
 				console.log(json);
-				const html = 
-				`
+				const html =
+					`
 				<!--In every entry it display's this part-->
-				<h2> Welcome {{name}}!</h2>
-				<h2>Today's Date is: {date}</h2>
+				<h2>Welcome {{username}}!</h2>
+				<h2>Today's date is: {date}</h2>
 				<!--Form to add a file one of the features:-->
 				<div class="form">
 					<div class="dropdown">
-						<button class="dropbtn">Fonts</button>
+						<button class="btn btn-primary">Fonts</button>
 						<div class="dropdown-content">
 							<a onclick = "Helvetica()">Helvetica</a>
 							<a onclick = "Futura()">Futura</a>
@@ -46,7 +46,7 @@
 						</div>
 					</div>
 					<div class="dropdown2">
-						<button class="dropbtn2">Size</button>
+						<button class="btn btn-primary">Size</button>
 						<div class="dropdown2-content">
 							<a onclick = "fiveSize()"> 5 </a>
 							<a onclick = "tenSize()"> 10 </a>
@@ -61,7 +61,7 @@
 						</div>
 					</div>
 					<div class="dropdown3">
-						<button class="dropbtn3">Font Color</button>
+						<button class="btn btn-primary">Font Color</button>
 						<div class="dropdown3-content">
 							<a onclick = "blackColor()"> Black </a>
 							<a onclick = "whiteColor()"> White </a>
@@ -73,76 +73,109 @@
 							<a onclick = "greenColor()"> Green </a>
 						</div>
 					</div>
+					<textarea class="textarea {style}" style="text-align:left" id="writing" data-id="{id}">{contents}</textarea>
 					<br>
+					<input type = 'file' name = 'files' class = "filesInput">
 					<br>
-					<textarea class="textarea" style="text-align:left" id="writing">
-					{{contents}}
-					</textarea>
-					<br>
-					<br>
-					<input type="file" id="myFile" name="filename" multiple>
-					<br>
-					<button> <a> Submit </a> </button>
-					<br>
-					<br>
-					<button onclick = "save(this)" class = "btn-pretty"> Submit Form </button>
+					<button onclick = "save(this)" class = "btn btn-danger"> Submit Form </button>
 					<input type='hidden' name='redirecturl' value='DiaryEntryThanks.html'>
 					<input type='hidden' name='survey' value='Diary Entry'>
-					<hr>
+					<br>
+					<hr class = "hr-dotted">
+					<br>
 				</div>
 				`
 				var dates = json.map(item => item.date);
+				var i = 0;
 				var uniqueDates = new Set(dates);
 				for (var d of uniqueDates) {
 					var div = document.createElement('div');
-					div.innerHTML = html.replace("{date}", d);
-					document.getElementById('entries').appendChild(div);
+					var contents = json[i].contents
+					var style = json[i].style;
+					// var fileName = json[i].fileName;
+					// var file = json[i].file.replaceAll("'", "\\'");
+					var id = json[i++]._id;
+					div.innerHTML = html
+						.replace("{date}", d)
+						.replace("{id}", id)
+						.replace("{contents}", contents)
+						.replace("{style}", style);
+					// .replace("{fileName}", fileName)
+					// .replace("{file}", file)
+					document.getElementById('entries')
+						.appendChild(div);
 				}
 			}
-			load();
-			
 		</script>
 	</head>
 
 	<body onload='loadTheme()'>
-		<div class="header">
+
+		<div class="nav-box">
+			<!--Navigation Bar-->
+			<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+				<a class="navbar-brand" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/index">
+					<img src="Diarywise_Logo.png" width="30" height="30" class="d-inline-block align-top logo-diarywise" alt="Diarywise Logo">
+					Diarywise
+				</a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/index">Home <span class="sr-only">(current)</span></a>
+						<a class="nav-link" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/calender_Test">Calender</a>
+						<a class="nav-link" href="https://www.enviremadstar.com/~/DiaryCreatorGroupProject/settings">Settings</a>
+					</div>
+				</div>
+
+				<!--Form-->
+				<form type="post" action="signup.html">
+					<input class="btn btn-outline-accent my-2 my-sm-0 btn-outline-danger" type="submit" value="Sign Up" role="button">
+
+					<!--Logout-->
+					<a href='/~/DiaryCreatorGroupProject/logout' class="btn btn-outline-success">Log Out</a>
+				</form>
+			</nav>
+		</div>
+
+		<!--for the br change it using the CSS, margin-bottom-->
+		<br>
+		<br>
+
+		<div id="entries">
+
+		</div>
+
+		<footer>
 			<br>
-			<a href="index.html">
-				<img src="Diarywise_Logo.png" alt="Website Logo" class="logo">
-			</a>
+			<h1> Diarywise. </h1>
+			<br>
+			<p class="description-footer">
+				Diarywise is a safe place to write a diary entry.
+			</p>
+			<br>
 			<center>
-				<h2 class="title"> Diary Entries </h2>
+				<a class="btn btn-light" href="contact.html">Contact</a>
 			</center>
-			<ul id="co">
-				<li id="cinco">
-					<a href="https://www.enviremadstar.com/~/Diary%20Creator%20Group%20Project/settings" class="settings" id="link"> Settings </a>
-				</li>
-				<li id = "seis">
-					<a onclick='logout()' id = "link">Log Out</a>
-				</li>
-			</ul>
-		</div>
-		<div id = "entries">
-		
-		</div>
-		
-		<div id="foot">
+			<br>
+			<br>
 			<center>
-				<section id="contact">
-					<h2>Contact</h2>
-					<form action='/survey/checkout' method='post' enctype="multipart/form-data">
-						<input type="text" name="Name" placeholder='Your name' required>
-						<input type="email" name="email" placeholder='Your email' required>
-						<textarea placeholder='Write a message here' required></textarea>
-						<button>Send Message</button>
-						<input type='hidden' name='redirecturl' value='thankyou.html'>
-						<input type='hidden' name='survey' value='Contact'>
-					</form>
-				</section>
+				<div class="icons">
+					<a href="https://www.linkedin.com/in/lakshmi-pachipulusu-22001620b/" class="link-footer">
+						<img src="Images/linkedln_logo.png" alt="lakshmi's linkedln profile" class="linkedln">
+					</a>
+					<a href="https://github.com/CodingLakshmi" class="link-footer">
+						<img src="Images/github_icon_img.jpg" alt="lakshmi's github profile" class="github">
+					</a>
+					<a href="https://devpost.com/Fantasy35" class="link-footer">
+						<img src="Images/Devpost_icon_img.png" alt="lakshmi's devpost portfolio" class="devpost">
+					</a>
+				</div>
 			</center>
-			<p id="pTag2">Copyright © 2021 Diarywise Team </p>
-		</div>
-		
+		</footer>
+
 		<script>
 			load();
 		</script>
